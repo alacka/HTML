@@ -1,0 +1,47 @@
+/************* res.php **********************/
+
+<?
+$name= $_POST['name']; 
+$phone= $_POST['phone'];
+$phonetosend= 'svmroot@ukr.net';
+$email= $_POST['e-mail'];
+$text= $_POST['text'];
+
+$header = 'Content-type: text/plain; charset="utf-8"'; 
+mail($phonetosend, $name, "\n\nИмя : $name \n\nТелефон : $phone \n\nE-mail : $email \n\nКоментарий : $text", $header);
+
+echo "Данные для записи получены, дата и время администратор обсудит с вами по телефону.";
+
+?>
+
+/************* res.php **********************/
+
+
+
+/************* Файл с формой - res.php в корне должен быть **********************/
+<form method="POST" id="formx" action="javascript:void(null);" onsubmit="call()">
+  <div id="results"></div>
+  <input type="text" name="name" placeholder="Имя и фамилия">
+	<input type="text" name="phone" placeholder="Телефон">
+	<input type="text" name="e-mail" placeholder="E-mail">
+</form>
+
+<script type="text/javascript" language="javascript">
+ 	function call() {
+ 	  var msg   = $('#formx').serialize();
+        $.ajax({
+          type: 'POST',
+          url: 'res.php',
+          data: msg,
+          success: function(data) {
+            $('#results').html(data);
+          },
+          error:  function(xhr, str){
+	    alert('Возникла ошибка: ' + xhr.responseCode);
+          }
+        });
+ 
+    }
+</script>
+
+/************* Файл с формой - res.php в корне должен быть **********************/
