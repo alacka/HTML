@@ -1,0 +1,13 @@
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+					<script type="text/javascript">
+					ymaps.ready(function () {
+					    var myMap = new ymaps.Map('mapp', {
+					            center: [55.751884, 37.716947],
+					            zoom: 10,
+					            controls: []
+					        }),
+					        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {})
+					    	myMap.geoObjects.add(myPlacemark);
+					});
+				</script>
+					<div id="mapp" style="height:250px;"></div>
