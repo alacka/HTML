@@ -1,3 +1,28 @@
+/************* res.php 2 **********************/
+
+<?
+if ($_POST['email'] == '') {
+$name= $_POST['name']; 
+$phone= $_POST['phone'];
+
+
+$phonetosend= 'lebedeva@ozlk.ru, fed140493@yandex.ru';
+
+$header = array(
+    "From: OZLK <OZLK>",
+	"Subject: Боковые иконки",
+    "MIME-Version: 1.0",
+    "Content-Type: text/html;charset=utf-8"
+);
+mail($phonetosend, "Боковые иконки", "\n\nИмя : $name \n\nТелефон : $phone", implode("\r\n", $header));
+
+echo "Сообщение отправлено";
+}
+?>
+
+
+
+
 /************* res.php **********************/
 
 <?
