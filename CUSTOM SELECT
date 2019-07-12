@@ -1,0 +1,19 @@
+<select class="dropdown">
+    <option>По популярности</option>
+    <option>Второй</option>
+    <option>Второй</option>
+    <option>Второй</option>
+    <option>Второй</option>
+    <option>Второй</option>
+</select>
+
+
+.dropdown {
+	-webkit-appearance: none;
+	-moz-appearance: window;
+	padding: 2px 50px 2px 2px;
+	border: none;
+	background-image: url("https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png");
+	background-repeat: no-repeat;
+	background-position: right center;
+}
