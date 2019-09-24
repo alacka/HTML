@@ -1,0 +1,24 @@
+$('.form-send input').blur(function()          //whenever you click off an input element
+{                   
+    if( $(this).val()  !=  '') {                      //if it is blank. 
+         $(this).addClass('fullinput');
+    } else {
+    	$(this).removeClass('fullinput');
+    }
+});
+
+
+
+
+
+input:focus, .fullinput {
+	color: #240d0f!important;
+	border-color: #240d0f!important;
+}
+
+
+
+
+input:nth-of-type(1):focus, input:nth-of-type(1).fullinput {
+	background: 13px center url(../img/bones_03.jpg) no-repeat, #fff;
+}
