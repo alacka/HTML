@@ -1,0 +1,18 @@
+<form enctype="multipart/form-data" method="POST" action="" >
+<input type="file" name="f">
+
+
+
+
+
+$uploaddir = 'file-form/'; // папка в корне 
+$uploadfile = $uploaddir . basename(uniqid().$_FILES['f']['name']);
+
+$allowed_filetypes = array('.jpg','.gif','.bmp','.png'); // разрешенные типы файлов
+$filename = $_FILES['f']['name'];
+$ext = substr($filename, strpos($filename,'.'), strlen($filename)-1); // получить расширение файла.
+if(!in_array($ext,$allowed_filetypes)) {
+      die('Вы пытаетесь загрузить неразрешенный тип файла.');
+}
+move_uploaded_file($_FILES['f']['tmp_name'], $uploadfile);
+echo $uploadfile;
